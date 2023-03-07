@@ -59,11 +59,38 @@ Antes de entrar a hablar en detalle sobre estos escenarios, es necesario revisar
 |```Serial.flush()```|Espera hasta que la transmisión de los datos seriales salientes se complete|
 |```serialEvent()```|Función que se llama cuando hay datos en serie disponibles. Para mas información consultar el siguiente [link](https://docs.arduino.cc/built-in-examples/communication/SerialEvent)|
 
-Es importante aclarar que las siguientes funciones son parte del API de Arduino. En caso de que se haga uso del ESP32, es necesario verificar si estas han sido portadas a esta plataforma en la pagina **Arduino core for the ESP32, ESP32-S2, ESP32-S3 and ESP32-C3** ([link](https://docs.espressif.com/projects/arduino-esp32/en/latest/)) o de lo contrario, el modelo de programación cambia y debera hacerse uso del **ESP-IDF Programming Guide** ([link](https://docs.espressif.com/projects/esp-idf/en/latest/esp32/)). Afortunadamente, la comunicación serial por **UART** si tiene soporte para el API Arduino-ESP32 (ver tabla ([link](https://docs.espressif.com/projects/arduino-esp32/en/latest/libraries.html))).
+Es importante aclarar que las siguientes funciones son parte del API de Arduino. En caso de que se haga uso del ESP32, es necesario verificar si estas han sido portadas a esta plataforma en la pagina **Arduino core for the ESP32, ESP32-S2, ESP32-S3 and ESP32-C3** ([link](https://docs.espressif.com/projects/arduino-esp32/en/latest/)) o de lo contrario, el modelo de programación cambia y debera hacerse uso del **ESP-IDF Programming Guide** ([link](https://docs.espressif.com/projects/esp-idf/en/latest/esp32/)). Afortunadamente, la comunicación serial por **UART** si tiene soporte para el API Arduino-ESP32 (ver [tabla](https://docs.espressif.com/projects/arduino-esp32/en/latest/libraries.html)).
+
+### Escenario 1 - Debug de aplicaciones
+
+Una de las aplicaciones mas utilies del puerto serial es que facilita el **debug** de aplicaciones gracias a que por medio de este se pueden imprimir, en tiempo de ejecución, **mensajes de log** que sirven como verificar el correcto funcionamiento de la logica del programa al usar un programa como el monitor serial o cualquier programa similar. 
+
+Es muy comun imprimir variables (que pueden indican el estado o valor de un sensor, mensajes de la aplicación, etc).
+
+En el siguiente ejemplo ([link](debug_esp32/)) se muestra como hacer para el montaje mostrado a continuación:
+
+![esp32_debug-serial](esp32_debug-serial.png)
+
+### Escenario 2 - Comunicación con otras placas y con el PC
+
+Por medio de operaciones de lectura y escritura en el puerto serial, es posible transmitir información desde y hacia otro dispositivo de hardware que tenga interfaz serial (Otra placa, computador o hardware especifico).
+
+Para comprender esto en el siguiente [directorio](serial-esp32/) explicara paso a paso una aplicación mediante la cual se enviaran comandos por serial desde un el PC al ESP32 para una tarea sencilla como prender y apagar un led.
+
+![comunicacion_serial](comunicacion_serial.png)
 
 
+## Referencias
+
+1. https://github.com/espressif/arduino-esp32#readme
+2. https://learn.sparkfun.com/tutorials/esp32-thing-hookup-guide/all
+3. https://makeabilitylab.github.io/physcomp/communication/serial-intro.html
+4. https://learn.sparkfun.com/tutorials/terminal-basics/arduino-serial-monitor-windows-mac-linux
+5. https://learn.sparkfun.com/tutorials/serial-communication
+6. https://github.com/bjepson/Arduino-Cookbook-3ed-INO/tree/master/ch04
 
 
+<!---
 
 
 
@@ -254,4 +281,4 @@ https://github.com/Apress/IoT-Development-for-ESP32-and-ESP8266-with-JavaScript
 
 
 
-
+-->
