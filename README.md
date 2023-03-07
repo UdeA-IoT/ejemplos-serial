@@ -88,6 +88,7 @@ Para comprender esto en el siguiente [directorio](serial-esp32/) explicara paso 
 4. https://learn.sparkfun.com/tutorials/terminal-basics/arduino-serial-monitor-windows-mac-linux
 5. https://learn.sparkfun.com/tutorials/serial-communication
 6. https://github.com/bjepson/Arduino-Cookbook-3ed-INO/tree/master/ch04
+7. https://www.deviceplus.com/
 
 
 <!---
